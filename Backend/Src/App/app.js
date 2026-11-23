@@ -1,23 +1,28 @@
-import express from "express"
-import router from "../Routes/routes.js"
-import cors from "cors"
+import express from "express";
+import router from "../Routes/routes.js";
+import cors from "cors";
 
-const app = express()
+const app = express();
 
-app.use(express.json())
+export const corsOptions = {
+    origin: (origin, callback) => {
+        const isAllowed =
+            !origin ||
+            origin === "https://chatroom-dusky-nine.vercel.app" ||
+            /^https:\/\/chatroom(?:-[a-z0-9-]+)?-jasbir657\.vercel\.app$/.test(origin);
 
-export const allowedOrigins = [
+        if (isAllowed) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true
+};
 
-    "http://localhost:5173",
-    "https://chatroom-jasbir657.vercel.app",
-    "https://chatroom-git-main-jasbir657.vercel.app",
-    "https://chatroom-kmigfdjrs-jasbir657.vercel.app"
-];
+app.use(cors(corsOptions));
+app.use(express.json());
 
-app.use(cors({
-  origin: allowedOrigins,
-  credentials: true
-}));
-app.use("/api" , router)
+app.use("/api", router);
 
-export default app
+export default app;

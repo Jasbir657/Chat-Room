@@ -1,10 +1,10 @@
 import { Server} from "socket.io";
-import { allowedOrigins } from "../App/app.js";
+import { corsOptions } from "../App/app.js";
 
 export const initializeSocket = (httpServer) => {
     const io = new Server(httpServer , {
   cors: {
-    origin : allowedOrigins,
+    origin : corsOptions,
     credentials : true
   }  
 });
