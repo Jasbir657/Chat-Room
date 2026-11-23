@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.*
+
+# Production and build output
+dist/
+dist-ssr/
+build/
+coverage/
+.vite/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Local/runtime files
+*.local
+*.tmp
+*.temp
+*.cache
+.cache/
+.eslintcache
+
+# Testing artifacts
+.nyc_output/
+coverage/
+
+# Editors and IDEs
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
