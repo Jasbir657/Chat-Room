@@ -8,9 +8,10 @@ app.use(express.json())
 
 export const allowedOrigins = [
 
-"chatroom-jasbir657.vercel.app",
-"chatroom-git-main-jasbir657.vercel.app",
-"chatroom-kmigfdjrs-jasbir657.vercel.app"
+    "http://localhost:5173",
+    "https://chatroom-jasbir657.vercel.app",
+    "https://chatroom-git-main-jasbir657.vercel.app",
+    "https://chatroom-kmigfdjrs-jasbir657.vercel.app"
 ];
 
 app.use(cors({
