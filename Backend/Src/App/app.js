@@ -8,7 +8,7 @@ export const corsOptions = {
     origin: (origin, callback) => {
         const isAllowed =
             !origin ||
-            origin === "https://chatroom-dusky-nine.vercel.app" ||
+            origin === "https://chatroom-dusky-nine.vercel.app" || 
             /^https:\/\/chatroom(?:-[a-z0-9-]+)?-jasbir657\.vercel\.app$/.test(origin);
 
         if (isAllowed) {

@@ -257,7 +257,7 @@ const ChatPage = () => {
                                 className="text-gray-500 cursor-pointer"
                             />
 
-                            <input
+                            <textarea
                                 type="text"
                                 value={inpValue}
                                 onChange={(e) => setInpValue(e.target.value)}
