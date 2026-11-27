@@ -232,6 +232,7 @@ const ChatPage = () => {
                                 >
                                     {getMessageText(msg)}
                                 </div>
+                                <p></p>
 
                             </div>
 
