@@ -49,7 +49,7 @@ export const fetchMessages = async(req , res)=>{
                 {Sender: sender, Receiver: receiver},
                 {Sender: receiver, Receiver: sender}
             ]
-        }).sort({createdAt : 1})
+        }).sort({createdAt : 1}).limit(40)
 
         return res.status(200).json({
             success: true,

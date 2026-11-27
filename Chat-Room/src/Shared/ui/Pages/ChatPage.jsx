@@ -138,6 +138,12 @@ const ChatPage = () => {
 
     }, [senderId, receiverId]);
 
+    const formatTime = (date) => {
+    return new Date(date).toLocaleTimeString("en-IN", {
+        hour: "2-digit",
+        minute: "2-digit",
+    });
+};
 
     return (
         <div className="h-screen bg-[#0b1120] text-white flex items-center justify-center p-4">
@@ -180,11 +186,11 @@ const ChatPage = () => {
                 <div className="flex-1 min-h-0 flex flex-col">
 
                     {/* Header */}
-                    <div className="h-20 px-5 border-b border-gray-800 flex items-center justify-between">
+                    <div className="h-20 px-5 border-b border-pink-800 flex items-center justify-between">
 
                         <div className="flex items-center gap-3">
 
-                            <div className="w-11 h-11 bg-blue-600 rounded-full flex items-center justify-center">
+                            <div className="w-11 h-11 bg-pink-600 rounded-full flex items-center justify-center">
                                 <MessageCircle />
                             </div>
 
@@ -226,13 +232,15 @@ const ChatPage = () => {
                                 <div
                                     className={`max-w-[75%] px-4 py-3 rounded-2xl text-sm ${
                                         String(msg.sender) === String(senderId)
-                                            ? "bg-blue-600 text-white rounded-br-sm"
-                                            : "bg-gray-800 text-gray-200 rounded-bl-sm"
+                                            ? "bg-pink-600 text-white rounded-br-sm"
+                                            : "bg-pink-800 text-gray-200 rounded-bl-sm"
                                     }`}
                                 >
                                     {getMessageText(msg)}
                                 </div>
-                                <p></p>
+                                <span className="text-xs text-gray-400 self-end">
+                                {formatTime(msg.createdAt)}
+                                </span>
 
                             </div>
 
