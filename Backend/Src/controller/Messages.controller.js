@@ -50,6 +50,7 @@ export const fetchMessages = async(req , res)=>{
                 {Sender: receiver, Receiver: sender}
             ]
         }).sort({createdAt : -1}).limit(30)
+        console.log("Messages fetched:", messages.length);
 
         return res.status(200).json({
             success: true,
