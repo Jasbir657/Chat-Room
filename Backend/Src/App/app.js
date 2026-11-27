@@ -9,7 +9,7 @@ export const corsOptions = {
         const isAllowed =
             !origin ||
             origin === "https://chatroom-dusky-nine.vercel.app" || 
-            /^https:\/\/chatroom(?:-[a-z0-9-]+)?-jasbir657\.vercel\.app$/.test(origin);
+            /^https:\/\/chatroom(?:-[a-z0-9-]+)?-jasbir657\.vercel\.app$/.test(origin)|| "http://localhost:5173";
 
         if (isAllowed) {
             callback(null, true);

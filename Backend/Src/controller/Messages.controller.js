@@ -51,9 +51,11 @@ export const fetchMessages = async(req , res)=>{
             ]
         }).sort({createdAt : -1}).limit(40)
 
+        const sortedMessages = messages.reverse()
+
         return res.status(200).json({
             success: true,
-            messages: messages.map((message) => ({
+            messages: sortedMessages.map((message) => ({
                 _id: message._id,
                 sender: message.Sender,
                 receiver: message.Receiver,
