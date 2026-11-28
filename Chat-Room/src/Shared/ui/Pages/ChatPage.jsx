@@ -236,11 +236,15 @@ const ChatPage = () => {
                                             : "bg-pink-800 text-gray-200 rounded-bl-sm"
                                     }`}
                                 >
-                                    {getMessageText(msg)}
+                                    <div className="flex flex-col">
+                                        {getMessageText(msg)}
+                                     <span className="text-xs text-gray-400 self-end">
+                                     {formatTime(msg.createdAt)}
+                                    </span>
+                                    </div>
+                                    
                                 </div>
-                                <span className="text-xs text-gray-400 self-end">
-                                {formatTime(msg.createdAt)}
-                                </span>
+                               
 
                             </div>
 
